@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import pic from "../../src/sudhanshu.png";
+import pic from "Sudhanshu.png";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-scroll";
