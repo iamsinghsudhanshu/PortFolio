@@ -1,0 +1,64 @@
+export const about = {
+  name: "Sudhanshu Singh",
+  headline: "I am a student of MCA in Artificial Intelligence and Machine Learning at Lovely Professional University.",
+  bsc: "Completed B.Sc. in Information Technology from Mumbai University with a CGPA of 8.52.",
+  goal: "I want to use Artificial Intelligence and Web Development to create technology that helps people in daily life.",
+  photo:
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_m74b91m74b91m74b-8NqhlrPgGtrzkLhVny2rHTveGH0XnX.png",
+  fullText:
+    "I am a student of MCA in Artificial Intelligence and Machine Learning at Lovely Professional University. I have completed my B.Sc. in Information Technology from Mumbai University with a CGPA of 8.52. I am passionate about building technology that makes life easier. I enjoy working with Artificial Intelligence, Machine Learning, and Web Development. My goal is to grow as a developer and create useful projects that can help people in real life.",
+}
+
+export const skills = {
+  languages: ["C", "C++", "Java", "Python"],
+  pythonLibraries: ["NumPy", "Pandas", "Matplotlib"],
+  web: ["HTML", "CSS", "JavaScript", "ReactJS", "NodeJS"],
+  mobile: ["React Native (currently learning)"],
+  databases: ["MySQL", "MongoDB"],
+  tools: ["AWS", "GitHub"],
+  soft: ["Problem-solving", "Analytical Thinking", "Team Collaboration"],
+}
+
+export const certifications = [
+  { title: "Python Essentials Course", org: "NPTEL", year: "2023" },
+  { title: "College level certificates can be added in future.", org: "", year: "" },
+]
+
+export const projects = [
+  {
+    title: "Service-Based Website",
+    description:
+      "This is a website I created to showcase and promote local services like electricians, plumbers, and barbers. It helps service providers connect with customers directly. The website includes service details, client reviews, and a contact form for easy communication. The design is clean and user-friendly so anyone can use it without difficulty. This project improved my skills in web development and also taught me how to build something that solves real problems.",
+    features: ["Service list", "Client reviews", "Contact form"],
+    tech: ["HTML", "CSS", "JavaScript", "ReactJS", "NodeJS", "MongoDB"],
+    outcome: "Helped service providers get more visibility online.",
+    liveLink: "https://hamara-service-apke-ghar-tak.netlify.app",
+  },
+]
+
+export const education = [
+  {
+    title: "MCA (AI & ML)",
+    school: "Lovely Professional University",
+    period: "2025 – 2027",
+    note: "Pursuing",
+  },
+  {
+    title: "B.Sc. IT",
+    school: "Mumbai University",
+    period: "2022 – 2025",
+    note: "CGPA 8.52",
+  },
+  {
+    title: "Senior Secondary (XII)",
+    school: "Central Public School, CBSE",
+    period: "2022",
+    note: "74.2%",
+  },
+  {
+    title: "Secondary (X)",
+    school: "RNP Public School, CBSE",
+    period: "2020",
+    note: "75%",
+  },
+]
