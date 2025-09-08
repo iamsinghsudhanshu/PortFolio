@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { certifications } from "@/lib/site-data"
-import { Award } from "lucide-react"
+import { Award, ExternalLink } from "lucide-react"
 
 export function CertificationsSection() {
   return (
@@ -35,6 +36,17 @@ export function CertificationsSection() {
               <CardContent className="text-slate-600">
                 {cert.org && <p>Organization: {cert.org}</p>}
                 {cert.year && <p>Year: {cert.year}</p>}
+                {cert.certificateUrl && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="mt-3 text-blue-600 hover:bg-blue-50 bg-transparent"
+                    onClick={() => window.open(cert.certificateUrl, "_blank")}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View Certificate
+                  </Button>
+                )}
               </CardContent>
             </Card>
           </motion.div>

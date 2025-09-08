@@ -21,6 +21,12 @@ export const skills = {
 
 export const certifications = [
   { title: "Python Essentials Course", org: "NPTEL", year: "2023" },
+  {
+    title: "Data Analysis with Python",
+    org: "Cognitive Class (IBM Developer Skills Network)",
+    year: "2025",
+    certificateUrl: "https://courses.cognitiveclass.ai/certificates/9ee59d73c15f4eefb71e5e78b0be6dce",
+  },
   { title: "College level certificates can be added in future.", org: "", year: "" },
 ]
 
