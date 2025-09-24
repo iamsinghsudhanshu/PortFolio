@@ -27,9 +27,7 @@ export function AboutMeSection() {
                 className="flex justify-center"
               >
                 <img
-                  src={
-                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_m74b91m74b91m74b-8NqhlrPgGtrzkLhVny2rHTveGH0XnX.png"
-                  }
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/Gemini_Generated_Image_m74b91m74b91m74b-MWa6xipw4GLrAC8smUw0lVchKEGKZX.png"
                   alt="Portrait photo of Sudhanshu Singh"
                   className="h-48 w-48 rounded-full border object-cover shadow-lg shadow-slate-900/10 ring-1 ring-black/5 transition-transform duration-300 hover:scale-[1.02] md:h-60 md:w-60"
                 />
