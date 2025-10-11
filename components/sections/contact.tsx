@@ -141,12 +141,12 @@ export function ContactSection() {
               <a
                 href="https://www.linkedin.com/in/sudhanshu-singh-4200b922a"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-blue-600"
               >
                 <Linkedin className="h-5 w-5 text-slate-600 group-hover:text-blue-600" aria-hidden />
                 <span className="sr-only">LinkedIn:</span>
-                linkedin.com/in/sudhanshu-singh-4200b922a
+                www.linkedin.com/in/sudhanshu-singh-4200b922a
               </a>
             </CardContent>
           </Card>

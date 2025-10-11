@@ -5,6 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { certifications } from "@/lib/site-data"
 import { Award, ExternalLink } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 export function CertificationsSection() {
   return (
@@ -36,17 +44,37 @@ export function CertificationsSection() {
               <CardContent className="text-slate-600">
                 {cert.org && <p>Organization: {cert.org}</p>}
                 {cert.year && <p>Year: {cert.year}</p>}
-                {cert.certificateUrl && (
+                {cert.certificateUrl ? (
                   <Button
                     variant="outline"
                     size="sm"
                     className="mt-3 text-blue-600 hover:bg-blue-50 bg-transparent"
-                    onClick={() => window.open(cert.certificateUrl, "_blank")}
+                    onClick={() => window.open(cert.certificateUrl as string, "_blank", "noopener,noreferrer")}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />
                     View Certificate
                   </Button>
-                )}
+                ) : cert.details ? (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="mt-3 text-blue-600 hover:bg-blue-50 bg-transparent"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        View Certificate
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-lg">
+                      <DialogHeader>
+                        <DialogTitle>{cert.title}</DialogTitle>
+                        {cert.issuedOn && <DialogDescription>Issued on {cert.issuedOn}</DialogDescription>}
+                      </DialogHeader>
+                      <div className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">{cert.details}</div>
+                    </DialogContent>
+                  </Dialog>
+                ) : null}
               </CardContent>
             </Card>
           </motion.div>

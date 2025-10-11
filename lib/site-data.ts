@@ -27,6 +27,25 @@ export const certifications = [
     year: "2025",
     certificateUrl: "https://courses.cognitiveclass.ai/certificates/9ee59d73c15f4eefb71e5e78b0be6dce",
   },
+  {
+    title: "Data Analytics Job Simulation",
+    org: "Deloitte Australia · Forage",
+    year: "2025",
+    issuedOn: "October 11, 2025",
+    details: `Sudhanshu Singh
+Data Analytics Job Simulation
+Certificate of Completion
+October 11th, 2025
+
+Over the period of October 2025, Sudhanshu Singh has completed practical tasks in:
+- Data analysis
+- Forensic technology
+
+Tina McCreery
+Chief Human Resources Officer, Deloitte
+
+Enrolment Verification Code D3hDCDBvjkMSKSEH4 | User Verification Code XkKWqPCaxx8RtoQP7 | Issued by Forage`,
+  },
   { title: "College level certificates can be added in future.", org: "", year: "" },
 ]
 
