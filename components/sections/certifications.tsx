@@ -66,11 +66,20 @@ export function CertificationsSection() {
                         View Certificate
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-lg">
+                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                       <DialogHeader>
                         <DialogTitle>{cert.title}</DialogTitle>
                         {cert.issuedOn && <DialogDescription>Issued on {cert.issuedOn}</DialogDescription>}
                       </DialogHeader>
+                      {cert.certificateImage && (
+                        <div className="mb-4">
+                          <img
+                            src={cert.certificateImage || "/placeholder.svg"}
+                            alt={cert.title}
+                            className="w-full rounded-lg shadow-md"
+                          />
+                        </div>
+                      )}
                       <div className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">{cert.details}</div>
                     </DialogContent>
                   </Dialog>

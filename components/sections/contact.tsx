@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -21,10 +20,23 @@ export function ContactSection() {
     e.preventDefault()
     setLoading(true)
     try {
-      // Simulated submit. You can integrate email/api later.
-      await new Promise((r) => setTimeout(r, 600))
-      toast({ title: "Message sent", description: "Thanks for reaching out!" })
-      setForm({ name: "", email: "", message: "" })
+      const formData = new FormData()
+      formData.append("name", form.name)
+      formData.append("email", form.email)
+      formData.append("message", form.message)
+
+      const res = await fetch("https://formspree.io/f/mldwprgo", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      })
+
+      if (res.ok) {
+        toast({ title: "Message sent", description: "Thanks for reaching out!" })
+        setForm({ name: "", email: "", message: "" })
+      } else {
+        toast({ title: "Something went wrong", description: "Please try again.", variant: "destructive" })
+      }
     } catch (err) {
       toast({ title: "Something went wrong", description: "Please try again.", variant: "destructive" })
     } finally {

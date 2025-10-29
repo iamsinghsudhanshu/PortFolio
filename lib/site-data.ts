@@ -11,16 +11,15 @@ export const about = {
 
 export const skills = {
   languages: ["C", "C++", "Java", "Python"],
-  pythonLibraries: ["NumPy", "Pandas", "Matplotlib"],
+  pythonLibraries: ["NumPy", "Pandas", "Matplotlib", "Seaborn"],
   web: ["HTML", "CSS", "JavaScript", "ReactJS", "NodeJS"],
-  mobile: ["React Native (currently learning)"],
+  mobile: ["Flutter (currently learning)"],
   databases: ["MySQL", "MongoDB"],
-  tools: ["AWS", "GitHub"],
+  tools: ["VS Code", "Jupyter Notebook", "GitHub"],
   soft: ["Problem-solving", "Analytical Thinking", "Team Collaboration"],
 }
 
 export const certifications = [
-  { title: "Python Essentials Course", org: "NPTEL", year: "2023" },
   {
     title: "Data Analysis with Python",
     org: "Cognitive Class (IBM Developer Skills Network)",
@@ -45,8 +44,33 @@ Tina McCreery
 Chief Human Resources Officer, Deloitte
 
 Enrolment Verification Code D3hDCDBvjkMSKSEH4 | User Verification Code XkKWqPCaxx8RtoQP7 | Issued by Forage`,
+    certificateImage:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-29%20215819-ExcdDZiOzQd0mxoS58c8OIH7QkOhhu.png",
   },
-  { title: "College level certificates can be added in future.", org: "", year: "" },
+  {
+    title: "HackManthan 2025 - Hackathon Participation",
+    org: "Lovely Professional University · EventEye",
+    year: "2025",
+    issuedOn: "2025",
+    details: `Certificate of Participation
+
+This Certificate Is Given To
+Sudhanshu Singh
+
+has successfully participated in HackManthan 2025, a 24-hour hackathon organized by EventEye, held at Lovely Professional University.
+
+We appreciate their enthusiasm, creativity, and contribution towards building innovative solutions during the event.
+
+Nilesh Kumar Gupta
+Founder & CEO, EventEye`,
+    certificateImage:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-29%20215750-kIb0SGLrtbUV0oZ3Op3uk85jFKvzGa.png",
+  },
+  {
+    title: "College level certificates can be added in the future.",
+    org: "",
+    year: "",
+  },
 ]
 
 export const projects = [
@@ -87,3 +111,10 @@ export const education = [
     note: "75%",
   },
 ]
+
+export const resume = {
+  fileName: "Sudhanshu_Singh_Resume.pdf",
+  downloadUrl: "/api/resume",
+  summary:
+    "Full-stack developer with expertise in MERN stack, AI/ML, and data analysis. Passionate about building scalable solutions.",
+}

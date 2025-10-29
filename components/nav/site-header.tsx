@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Download } from "lucide-react"
+import { resume } from "@/lib/site-data"
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -66,7 +67,7 @@ export function SiteHeader() {
           Sudhanshu Singh
         </Link>
 
-        <nav className="hidden gap-1 md:flex" aria-label="Primary">
+        <nav className="hidden gap-1 md:flex items-center" aria-label="Primary">
           {navItems.map((item) => {
             const isActive = active === item.href
             return (
@@ -83,6 +84,15 @@ export function SiteHeader() {
               </a>
             )
           })}
+          <a
+            href={resume.downloadUrl}
+            download
+            className="ml-2 inline-flex items-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700 transition-colors"
+            aria-label="Download resume"
+          >
+            <Download className="h-4 w-4" />
+            Resume
+          </a>
         </nav>
 
         <Button
@@ -111,6 +121,15 @@ export function SiteHeader() {
               {item.label}
             </a>
           ))}
+          <a
+            href={resume.downloadUrl}
+            download
+            className="mt-2 inline-flex items-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700 transition-colors"
+            aria-label="Download resume"
+          >
+            <Download className="h-4 w-4" />
+            Resume
+          </a>
         </nav>
       </div>
     </header>
