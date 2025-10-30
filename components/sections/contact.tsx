@@ -128,12 +128,12 @@ export function ContactSection() {
             </CardHeader>
             <CardContent className="space-y-3 text-slate-600">
               <a
-                href="mailto:ss7900585@gmail.com"
+                href="mailto:sudhanshusingh00003@gmail.com"
                 className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-emerald-600 transition-colors"
               >
                 <Mail className="h-5 w-5 text-slate-600 group-hover:text-emerald-600 transition-colors" aria-hidden />
                 <span className="sr-only">Email:</span>
-                ss7900585@gmail.com
+                sudhanshusingh00003@gmail.com
               </a>
               <a
                 href="tel:7562081734"
