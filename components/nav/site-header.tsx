@@ -12,13 +12,13 @@ const navItems = [
   { href: "#certifications", label: "Certifications" },
   { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
-  { href: "/contact", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ]
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState("#about")
-  const [scrolled, setScrolled] = useState(false) // track scroll
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -54,6 +54,10 @@ export function SiteHeader() {
     return () => observer.disconnect()
   }, [])
 
+  const handleResumeClick = () => {
+    window.open(resume.downloadUrl, "_blank")
+  }
+
   return (
     <header
       className={`sticky top-0 z-40 w-full border-b transition-colors ${
@@ -76,23 +80,22 @@ export function SiteHeader() {
                 href={item.href}
                 className={`rounded-md px-3 py-2 text-sm transition-colors ${
                   isActive
-                    ? "text-blue-600"
-                    : "text-slate-600 hover:text-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                    ? "text-emerald-600"
+                    : "text-slate-600 hover:text-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
                 }`}
               >
                 {item.label}
               </a>
             )
           })}
-          <a
-            href={resume.downloadUrl}
-            download
-            className="ml-2 inline-flex items-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700 transition-colors"
-            aria-label="Download resume"
+          <button
+            onClick={handleResumeClick}
+            className="ml-2 inline-flex items-center gap-2 rounded-md bg-emerald-600 px-3 py-2 text-sm text-white hover:bg-emerald-700 transition-colors"
+            aria-label="Open resume in new tab"
           >
             <Download className="h-4 w-4" />
             Resume
-          </a>
+          </button>
         </nav>
 
         <Button
@@ -115,21 +118,23 @@ export function SiteHeader() {
               href={item.href}
               onClick={() => setOpen(false)}
               className={`rounded-md px-3 py-2 text-sm transition-colors ${
-                active === item.href ? "text-blue-600" : "text-slate-600 hover:text-blue-600"
+                active === item.href ? "text-emerald-600" : "text-slate-600 hover:text-emerald-600"
               }`}
             >
               {item.label}
             </a>
           ))}
-          <a
-            href={resume.downloadUrl}
-            download
-            className="mt-2 inline-flex items-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700 transition-colors"
-            aria-label="Download resume"
+          <button
+            onClick={() => {
+              handleResumeClick()
+              setOpen(false)
+            }}
+            className="mt-2 inline-flex items-center gap-2 rounded-md bg-emerald-600 px-3 py-2 text-sm text-white hover:bg-emerald-700 transition-colors w-full justify-center"
+            aria-label="Open resume in new tab"
           >
             <Download className="h-4 w-4" />
             Resume
-          </a>
+          </button>
         </nav>
       </div>
     </header>

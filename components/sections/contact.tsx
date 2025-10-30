@@ -32,7 +32,10 @@ export function ContactSection() {
       })
 
       if (res.ok) {
-        toast({ title: "Message sent", description: "Thanks for reaching out!" })
+        toast({
+          title: "Message sent!",
+          description: "Thank you for contacting me! I will get back to you soon.",
+        })
         setForm({ name: "", email: "", message: "" })
       } else {
         toast({ title: "Something went wrong", description: "Please try again.", variant: "destructive" })
@@ -63,9 +66,9 @@ export function ContactSection() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.4 }}
         >
-          <Card>
+          <Card className="border-emerald-100 bg-gradient-to-br from-white to-emerald-50 shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
-              <CardTitle className="text-slate-900">Send a message</CardTitle>
+              <CardTitle className="text-emerald-900">Send a message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={onSubmit} className="space-y-4">
@@ -104,7 +107,7 @@ export function ContactSection() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full transform bg-gradient-to-r from-blue-600 to-teal-500 text-white transition-transform hover:-translate-y-0.5 hover:from-blue-700 hover:to-teal-600"
+                  className="w-full transform bg-gradient-to-r from-emerald-600 to-teal-500 text-white transition-transform hover:-translate-y-0.5 hover:from-emerald-700 hover:to-teal-600"
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </Button>
@@ -119,24 +122,24 @@ export function ContactSection() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.4 }}
         >
-          <Card>
+          <Card className="border-emerald-100 bg-gradient-to-br from-white to-emerald-50 shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
-              <CardTitle className="text-slate-900">Contact info</CardTitle>
+              <CardTitle className="text-emerald-900">Contact info</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-slate-600">
               <a
                 href="mailto:sudhanshusingh00003@gmail.com"
-                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-blue-600"
+                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-emerald-600 transition-colors"
               >
-                <Mail className="h-5 w-5 text-slate-600 group-hover:text-blue-600" aria-hidden />
+                <Mail className="h-5 w-5 text-slate-600 group-hover:text-emerald-600 transition-colors" aria-hidden />
                 <span className="sr-only">Email:</span>
                 sudhanshusingh00003@gmail.com
               </a>
               <a
-                href="tel:7562081734"
-                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-blue-600"
+                href="tel:07562081734"
+                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-emerald-600 transition-colors"
               >
-                <Phone className="h-5 w-5 text-slate-600 group-hover:text-blue-600" aria-hidden />
+                <Phone className="h-5 w-5 text-slate-600 group-hover:text-emerald-600 transition-colors" aria-hidden />
                 <span className="sr-only">Phone:</span>
                 7562081734
               </a>
@@ -144,9 +147,9 @@ export function ContactSection() {
                 href="https://github.com/iamsinghsudhanshu"
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-blue-600"
+                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-emerald-600 transition-colors"
               >
-                <Github className="h-5 w-5 text-slate-600 group-hover:text-blue-600" aria-hidden />
+                <Github className="h-5 w-5 text-slate-600 group-hover:text-emerald-600 transition-colors" aria-hidden />
                 <span className="sr-only">GitHub:</span>
                 github.com/iamsinghsudhanshu
               </a>
@@ -154,12 +157,18 @@ export function ContactSection() {
                 href="https://www.linkedin.com/in/sudhanshu-singh-4200b922a"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-blue-600"
+                className="group flex items-center gap-3 rounded-md px-2 py-2 hover:text-emerald-600 transition-colors"
               >
-                <Linkedin className="h-5 w-5 text-slate-600 group-hover:text-blue-600" aria-hidden />
+                <Linkedin
+                  className="h-5 w-5 text-slate-600 group-hover:text-emerald-600 transition-colors"
+                  aria-hidden
+                />
                 <span className="sr-only">LinkedIn:</span>
                 www.linkedin.com/in/sudhanshu-singh-4200b922a
               </a>
+              <p className="text-sm text-slate-500 pt-4 border-t border-slate-200">
+                I typically respond within 24-48 hours.
+              </p>
             </CardContent>
           </Card>
         </motion.div>

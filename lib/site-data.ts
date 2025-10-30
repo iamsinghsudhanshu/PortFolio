@@ -113,8 +113,9 @@ export const education = [
 ]
 
 export const resume = {
-  fileName: "Sudhanshu_Singh_Resume.pdf",
-  downloadUrl: "/api/resume",
+  fileName: "sudhanshu_resume(2025).pdf",
+  downloadUrl: "/sudhanshu_resume(2025).pdf",
   summary:
     "Full-stack developer with expertise in MERN stack, AI/ML, and data analysis. Passionate about building scalable solutions.",
+  email: "sudhanshusingh00003@gmail.com",
 }

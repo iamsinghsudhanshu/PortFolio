@@ -15,28 +15,29 @@ const groups = [
   { title: "Soft Skills", items: skills.soft, icon: Users2 },
 ]
 
-// Simple mapping for illustrative progress; defaults to 70% if not specified
-const progress: Record<string, number> = {
-  C: 70,
-  "C++": 75,
-  Java: 70,
-  Python: 75,
-  NumPy: 70,
-  Pandas: 70,
-  Matplotlib: 65,
-  HTML: 85,
-  CSS: 80,
-  JavaScript: 75,
-  ReactJS: 70,
-  NodeJS: 65,
-  "React Native (currently learning)": 55,
-  MySQL: 70,
-  MongoDB: 65,
-  AWS: 55,
-  GitHub: 75,
-  "Problem-solving": 80,
-  "Analytical Thinking": 75,
-  "Team Collaboration": 80,
+const proficiencyLevels: Record<string, "Proficient" | "Intermediate" | "Learning"> = {
+  C: "Intermediate",
+  "C++": "Intermediate",
+  Java: "Intermediate",
+  Python: "Proficient",
+  NumPy: "Proficient",
+  Pandas: "Proficient",
+  Matplotlib: "Intermediate",
+  Seaborn: "Intermediate",
+  HTML: "Proficient",
+  CSS: "Proficient",
+  JavaScript: "Proficient",
+  ReactJS: "Proficient",
+  NodeJS: "Intermediate",
+  "Flutter (currently learning)": "Learning",
+  MySQL: "Proficient",
+  MongoDB: "Intermediate",
+  "VS Code": "Proficient",
+  "Jupyter Notebook": "Proficient",
+  GitHub: "Proficient",
+  "Problem-solving": "Proficient",
+  "Analytical Thinking": "Proficient",
+  "Team Collaboration": "Proficient",
 }
 
 export function SkillsSection() {
@@ -52,7 +53,7 @@ export function SkillsSection() {
         Skills
       </motion.h2>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         {groups.map((group) => {
           const Icon = group.icon
           return (
@@ -64,28 +65,34 @@ export function SkillsSection() {
               transition={{ duration: 0.4 }}
             >
               <Card className="transition-transform hover:-translate-y-0.5 hover:shadow-md">
-                <CardHeader className="flex flex-row items-center gap-3">
-                  <Icon className="h-5 w-5 text-blue-600" aria-hidden />
+                <CardHeader className="flex flex-row items-center gap-3 pb-3">
+                  <Icon className="h-5 w-5 text-emerald-600" aria-hidden />
                   <CardTitle className="text-slate-900">{group.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                  {group.items.map((item) => {
-                    const pct = Math.min(100, Math.max(0, progress[item] ?? 70))
-                    return (
-                      <div key={item} className="group rounded-md border p-3">
-                        <div className="mb-1 flex items-center justify-between text-sm">
-                          <span className="font-medium text-slate-900">{item}</span>
-                          <span className="text-slate-600">{pct}%</span>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((item) => {
+                      const level = proficiencyLevels[item] || "Intermediate"
+                      const colorMap = {
+                        Proficient: "bg-emerald-100 text-emerald-700 border-emerald-300",
+                        Intermediate: "bg-teal-100 text-teal-700 border-teal-300",
+                        Learning: "bg-amber-100 text-amber-700 border-amber-300",
+                      }
+                      return (
+                        <div key={item} className="group relative" title={level}>
+                          <span
+                            className={`inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium border transition-all hover:shadow-md ${colorMap[level]}`}
+                          >
+                            {item}
+                          </span>
+                          {/* Tooltip */}
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-slate-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
+                            {level}
+                          </div>
                         </div>
-                        <div className="h-2 rounded-full bg-slate-200">
-                          <div
-                            style={{ width: `${pct}%` }}
-                            className="h-2 rounded-full bg-gradient-to-r from-blue-600 to-teal-500"
-                          />
-                        </div>
-                      </div>
-                    )
-                  })}
+                      )
+                    })}
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

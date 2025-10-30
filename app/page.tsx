@@ -5,6 +5,9 @@ import { CertificationsSection } from "@/components/sections/certifications"
 import { ProjectsSection } from "@/components/sections/projects"
 import { EducationSection } from "@/components/sections/education"
 import { ContactSection } from "@/components/sections/contact"
+import { HeroSection } from "@/components/sections/hero"
+import { Footer } from "@/components/sections/footer"
+import { BackToTop } from "@/components/back-to-top"
 
 export default function HomePage() {
   return (
@@ -24,6 +27,7 @@ export default function HomePage() {
       </ul>
 
       <SiteHeader />
+      <HeroSection />
       <main className="relative z-10 mx-auto max-w-5xl px-4 py-10 md:py-12">
         <AboutMeSection />
         <SkillsSection />
@@ -32,6 +36,8 @@ export default function HomePage() {
         <EducationSection />
         <ContactSection />
       </main>
+      <Footer />
+      <BackToTop />
     </>
   )
 }
