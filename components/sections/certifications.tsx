@@ -18,7 +18,7 @@ export function CertificationsSection() {
   return (
     <section id="certifications" className="scroll-mt-24 py-8 md:py-12">
       <motion.h2
-        className="mb-6 text-balance text-2xl font-semibold text-slate-900"
+        className="mb-8 text-balance text-3xl md:text-4xl font-bold text-slate-900"
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
@@ -36,22 +36,22 @@ export function CertificationsSection() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.4 }}
           >
-            <Card className="transition-transform hover:-translate-y-0.5 hover:shadow-md">
+            <Card className="transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-105 border-2">
               <CardHeader className="flex flex-row items-center gap-3">
-                <Award className="h-5 w-5 text-blue-600" aria-hidden />
-                <CardTitle className="text-slate-900">{cert.title}</CardTitle>
+                <Award className="h-7 w-7 text-blue-600 group-hover:scale-125 transition-transform" aria-hidden />
+                <CardTitle className="text-lg md:text-xl text-slate-900">{cert.title}</CardTitle>
               </CardHeader>
-              <CardContent className="text-slate-600">
-                {cert.org && <p>Organization: {cert.org}</p>}
+              <CardContent className="text-base text-slate-600">
+                {cert.org && <p className="font-medium">{cert.org}</p>}
                 {cert.year && <p>Year: {cert.year}</p>}
                 {cert.certificateUrl ? (
                   <Button
                     variant="outline"
                     size="sm"
-                    className="mt-3 text-blue-600 hover:bg-blue-50 bg-transparent"
+                    className="mt-4 text-base font-semibold text-blue-600 hover:bg-blue-50 bg-transparent border-2 hover:scale-110 transition-all hover:shadow-lg"
                     onClick={() => window.open(cert.certificateUrl as string, "_blank", "noopener,noreferrer")}
                   >
-                    <ExternalLink className="mr-2 h-4 w-4" />
+                    <ExternalLink className="mr-2 h-5 w-5" />
                     View Certificate
                   </Button>
                 ) : cert.details ? (
@@ -60,9 +60,9 @@ export function CertificationsSection() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="mt-3 text-blue-600 hover:bg-blue-50 bg-transparent"
+                        className="mt-4 text-base font-semibold text-blue-600 hover:bg-blue-50 bg-transparent border-2 hover:scale-110 transition-all hover:shadow-lg"
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" />
+                        <ExternalLink className="mr-2 h-5 w-5" />
                         View Certificate
                       </Button>
                     </DialogTrigger>

@@ -44,7 +44,7 @@ export function SkillsSection() {
   return (
     <section id="skills" className="scroll-mt-24 py-8 md:py-12">
       <motion.h2
-        className="mb-6 text-balance text-2xl font-semibold text-slate-900"
+        className="mb-8 text-balance text-3xl md:text-4xl font-bold text-slate-900"
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
@@ -53,7 +53,7 @@ export function SkillsSection() {
         Skills
       </motion.h2>
 
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {groups.map((group) => {
           const Icon = group.icon
           return (
@@ -64,10 +64,10 @@ export function SkillsSection() {
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.4 }}
             >
-              <Card className="transition-transform hover:-translate-y-0.5 hover:shadow-md">
+              <Card className="transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-105">
                 <CardHeader className="flex flex-row items-center gap-3 pb-3">
-                  <Icon className="h-5 w-5 text-emerald-600" aria-hidden />
-                  <CardTitle className="text-slate-900">{group.title}</CardTitle>
+                  <Icon className="h-6 w-6 text-emerald-600 group-hover:scale-125 transition-transform" aria-hidden />
+                  <CardTitle className="text-lg md:text-xl text-slate-900">{group.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
@@ -81,7 +81,7 @@ export function SkillsSection() {
                       return (
                         <div key={item} className="group relative" title={level}>
                           <span
-                            className={`inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium border transition-all hover:shadow-md ${colorMap[level]}`}
+                            className={`inline-flex items-center rounded-full px-4 py-2 text-base font-semibold border transition-all hover:shadow-lg hover:scale-110 cursor-pointer ${colorMap[level]}`}
                           >
                             {item}
                           </span>

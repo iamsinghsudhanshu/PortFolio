@@ -18,7 +18,7 @@ export function HeroSection() {
           >
             <div className="space-y-2">
               <motion.h1
-                className="text-5xl md:text-6xl font-bold text-emerald-900 leading-tight"
+                className="text-6xl md:text-7xl font-bold text-emerald-900 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -26,7 +26,7 @@ export function HeroSection() {
                 Sudhanshu Singh
               </motion.h1>
               <motion.p
-                className="text-xl md:text-2xl text-teal-700 font-medium"
+                className="text-2xl md:text-3xl text-teal-700 font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -42,7 +42,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.25 }}
             >
               <motion.p
-                className="text-lg text-slate-700 font-medium"
+                className="text-lg md:text-xl text-slate-700 font-medium"
                 animate={{ y: [0, -48, -96, 0] }}
                 transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               >
@@ -61,13 +61,13 @@ export function HeroSection() {
             >
               <a
                 href="#projects"
-                className="px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors transform hover:scale-105"
+                className="px-8 py-4 bg-emerald-600 text-white rounded-lg font-semibold text-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg active:scale-95"
               >
                 View My Work
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 border-2 border-teal-600 text-teal-600 rounded-lg font-medium hover:bg-teal-50 transition-colors transform hover:scale-105"
+                className="px-8 py-4 border-2 border-teal-600 text-teal-600 rounded-lg font-semibold text-lg hover:bg-teal-50 transition-all duration-300 transform hover:scale-110 hover:shadow-lg active:scale-95"
               >
                 Get In Touch
               </a>
