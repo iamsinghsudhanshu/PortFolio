@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { about } from "@/lib/site-data"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 export function HeroSection() {
   return (
@@ -120,12 +120,26 @@ export function HeroSection() {
             className="flex justify-center"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-2xl blur-2xl opacity-20" />
-              <img
-                src={about.photo || "/placeholder.svg"}
-                alt="Sudhanshu Singh - Web Developer and Data Scientist"
-                className="relative h-80 w-80 rounded-2xl object-cover shadow-2xl border-4 border-white"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full blur-2xl opacity-20" />
+
+              {/* ✅ FIX 3 APPLIED HERE */}
+ <img
+  src={about.photo || "/placeholder.svg"}
+  alt="Sudhanshu Singh"
+  className="
+    relative
+    h-72 w-72
+    md:h-96 md:w-96
+    lg:h-[420px] lg:w-[420px]
+    rounded-full
+    object-cover
+    object-top
+    shadow-2xl
+    border-8 border-emerald-600
+  "
+/>
+
+
             </div>
           </motion.div>
         </div>

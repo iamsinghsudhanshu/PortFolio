@@ -3,8 +3,7 @@ export const about = {
   headline: "I am a student of MCA in Artificial Intelligence and Machine Learning at Lovely Professional University.",
   bsc: "Completed B.Sc. in Information Technology from Mumbai University with a CGPA of 8.52.",
   goal: "I want to use Artificial Intelligence and Web Development to create technology that helps people in daily life.",
-  photo:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_m74b91m74b91m74b-8NqhlrPgGtrzkLhVny2rHTveGH0XnX.png",
+  photo: "/profile-photo.png",
   fullText:
     "I am a student of MCA in Artificial Intelligence and Machine Learning at Lovely Professional University. I have completed my B.Sc. in Information Technology from Mumbai University with a CGPA of 8.52. I am passionate about building technology that makes life easier. I enjoy working with Artificial Intelligence, Machine Learning, and Web Development. My goal is to grow as a developer and create useful projects that can help people in real life.",
 }

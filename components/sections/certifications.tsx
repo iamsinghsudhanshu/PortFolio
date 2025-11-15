@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { certifications } from "@/lib/site-data"
-import { Award, ExternalLink } from "lucide-react"
+import { Award, ExternalLink } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -24,7 +24,7 @@ export function CertificationsSection() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.4 }}
       >
-        Certifications & Achievements
+        Certificate and Achievements
       </motion.h2>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

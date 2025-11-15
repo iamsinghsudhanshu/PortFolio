@@ -3,41 +3,39 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { skills } from "@/lib/site-data"
-import { Code2, Library, Globe, Smartphone, Database, Wrench, Users2 } from "lucide-react"
+import { Code2, Library, Globe, Database, Wrench, Users2 } from 'lucide-react'
 
 const groups = [
   { title: "Programming Languages", items: skills.languages, icon: Code2 },
   { title: "Python Libraries", items: skills.pythonLibraries, icon: Library },
   { title: "Web Development", items: skills.web, icon: Globe },
-  { title: "Mobile Development", items: skills.mobile, icon: Smartphone },
   { title: "Databases", items: skills.databases, icon: Database },
   { title: "Tools & Technologies", items: skills.tools, icon: Wrench },
   { title: "Soft Skills", items: skills.soft, icon: Users2 },
 ]
 
-const proficiencyLevels: Record<string, "Proficient" | "Intermediate" | "Learning"> = {
-  C: "Intermediate",
-  "C++": "Intermediate",
-  Java: "Intermediate",
-  Python: "Proficient",
-  NumPy: "Proficient",
-  Pandas: "Proficient",
-  Matplotlib: "Intermediate",
-  Seaborn: "Intermediate",
-  HTML: "Proficient",
-  CSS: "Proficient",
-  JavaScript: "Proficient",
-  ReactJS: "Proficient",
-  NodeJS: "Intermediate",
-  "Flutter (currently learning)": "Learning",
-  MySQL: "Proficient",
-  MongoDB: "Intermediate",
-  "VS Code": "Proficient",
-  "Jupyter Notebook": "Proficient",
-  GitHub: "Proficient",
-  "Problem-solving": "Proficient",
-  "Analytical Thinking": "Proficient",
-  "Team Collaboration": "Proficient",
+const skillPercentages: Record<string, number> = {
+  C: 70,
+  "C++": 70,
+  Java: 75,
+  Python: 90,
+  NumPy: 85,
+  Pandas: 85,
+  Matplotlib: 80,
+  Seaborn: 80,
+  HTML: 95,
+  CSS: 95,
+  JavaScript: 90,
+  ReactJS: 90,
+  NodeJS: 80,
+  MySQL: 85,
+  MongoDB: 80,
+  "VS Code": 95,
+  "Jupyter Notebook": 85,
+  GitHub: 90,
+  "Problem-solving": 90,
+  "Analytical Thinking": 85,
+  "Team Collaboration": 88,
 }
 
 export function SkillsSection() {
@@ -70,25 +68,39 @@ export function SkillsSection() {
                   <CardTitle className="text-lg md:text-xl text-slate-900">{group.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="space-y-4">
                     {group.items.map((item) => {
-                      const level = proficiencyLevels[item] || "Intermediate"
-                      const colorMap = {
-                        Proficient: "bg-emerald-100 text-emerald-700 border-emerald-300",
-                        Intermediate: "bg-teal-100 text-teal-700 border-teal-300",
-                        Learning: "bg-amber-100 text-amber-700 border-amber-300",
+                      const percentage = skillPercentages[item] || 75
+                      const getBarColor = (percent: number) => {
+                        if (percent >= 85) return "bg-emerald-500"
+                        if (percent >= 70) return "bg-teal-500"
+                        return "bg-amber-500"
                       }
+
                       return (
-                        <div key={item} className="group relative" title={level}>
-                          <span
-                            className={`inline-flex items-center rounded-full px-4 py-2 text-base font-semibold border transition-all hover:shadow-lg hover:scale-110 cursor-pointer ${colorMap[level]}`}
-                          >
-                            {item}
-                          </span>
-                          {/* Tooltip */}
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-slate-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
-                            {level}
+                        <div key={item} className="group">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-base md:text-lg font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
+                              {item}
+                            </span>
+                            <span className="text-sm md:text-base font-bold text-emerald-600">
+                              {percentage}%
+                            </span>
                           </div>
+                          <motion.div
+                            className="w-full bg-slate-200 rounded-full h-3 overflow-hidden"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                          >
+                            <motion.div
+                              className={`h-full rounded-full transition-all duration-500 ${getBarColor(percentage)}`}
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${percentage}%` }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.8, ease: "easeOut" }}
+                            />
+                          </motion.div>
                         </div>
                       )
                     })}
