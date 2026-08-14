@@ -68,13 +68,12 @@ export default function ContactForm() {
   }
 
   return (
-    <main className="min-h-screen w-full bg-slate-50 flex items-center justify-center p-4">
-      <section aria-label="Contact form" className="w-full max-w-lg">
-        <div className="bg-white rounded-2xl shadow-xl ring-1 ring-slate-100 p-6 sm:p-8 transition-shadow">
-          <h1 className="text-2xl font-semibold text-slate-900 mb-2 text-balance">Get in touch</h1>
-          <p className="text-sm text-slate-600 mb-6">
-            Have a question or proposal? Fill out the form and I’ll get back to you.
-          </p>
+    <section aria-label="Contact form" className="w-full max-w-lg">
+      <div className="rounded-2xl border border-border bg-card p-6 shadow-xl sm:p-8 transition-shadow">
+        <h1 className="mb-2 text-balance text-2xl font-semibold text-foreground">Get in touch</h1>
+        <p className="mb-6 text-sm text-muted-foreground">
+          Send a message using the form below.
+        </p>
 
           {success && (
             <div
@@ -82,7 +81,7 @@ export default function ContactForm() {
               aria-live="polite"
               className="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800"
             >
-              ✅ Thanks! Your message has been sent successfully.
+              Thanks! Your message has been sent successfully.
             </div>
           )}
 
@@ -189,8 +188,7 @@ export default function ContactForm() {
               </div>
             </div>
           </form>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
   )
 }
