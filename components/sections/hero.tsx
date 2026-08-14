@@ -1,148 +1,32 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { about } from "@/lib/site-data"
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowDownRight, Github, Linkedin, Mail } from "lucide-react"
+import { about, contact } from "@/lib/site-data"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-12 md:py-20">
-      <div className="mx-auto max-w-5xl px-4">
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          {/* Left: Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="space-y-2">
-              <motion.h1
-                className="text-6xl md:text-7xl font-bold text-emerald-900 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                Sudhanshu Singh
-              </motion.h1>
-              <motion.p
-                className="text-2xl md:text-3xl text-teal-700 font-medium"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                Web Developer Trainee | Aspiring Data Scientist | MCA (AI & ML)
-              </motion.p>
-            </div>
-
-            <motion.div
-              className="relative h-12 overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-            >
-              <motion.p
-                className="text-lg md:text-xl text-slate-700 font-medium"
-                animate={{ y: [0, -48, -96, 0] }}
-                transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-              >
-                <span className="block h-12">Building modern web apps and data-driven solutions.</span>
-                <span className="block h-12">Solving real-world problems with code.</span>
-                <span className="block h-12">Passionate about learning and growth.</span>
-              </motion.p>
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              className="flex gap-4 pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <a
-                href="#projects"
-                className="px-8 py-4 bg-emerald-600 text-white rounded-lg font-semibold text-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg active:scale-95"
-              >
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                className="px-8 py-4 border-2 border-teal-600 text-teal-600 rounded-lg font-semibold text-lg hover:bg-teal-50 transition-all duration-300 transform hover:scale-110 hover:shadow-lg active:scale-95"
-              >
-                Get In Touch
-              </a>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              className="flex gap-4 pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <a
-                href="https://github.com/iamsinghsudhanshu"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-emerald-100 hover:text-emerald-700 transition-all duration-300 transform hover:scale-110"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/sudhanshu-singh-4200b922a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-teal-100 hover:text-teal-700 transition-all duration-300 transform hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="mailto:sudhanshusingh00003@gmail.com?subject=Let's%20Connect&body=Hi%20Sudhanshu,%0D%0AI%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you!"
-                onClick={(e) => {
-                  window.location.href =
-                    "mailto:sudhanshusingh00003@gmail.com?subject=Let's Connect&body=Hi Sudhanshu,%0D%0AI saw your portfolio and would like to connect with you!"
-                }}
-                className="p-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-amber-100 hover:text-amber-700 transition-all duration-300 transform hover:scale-110"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right: Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-full blur-2xl opacity-20" />
-
-              {/* ✅ FIX 3 APPLIED HERE */}
- <img
-  src={about.photo || "/placeholder.svg"}
-  alt="Sudhanshu Singh"
-  className="
-    relative
-    h-72 w-72
-    md:h-96 md:w-96
-    lg:h-[420px] lg:w-[420px]
-    rounded-full
-    object-cover
-    object-top
-    shadow-2xl
-    border-8 border-emerald-600
-  "
-/>
-
-
-            </div>
-          </motion.div>
-        </div>
+    <section id="home" className="relative overflow-hidden px-5 pb-20 pt-24 md:px-8 md:pb-32 md:pt-32">
+      <div className="mx-auto grid max-w-6xl items-end gap-14 lg:grid-cols-[1.1fr_.9fr]">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65 }}>
+          <p className="eyebrow mb-6">MCA / AI & ML / Mumbai, Maharashtra</p>
+          <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[.98] tracking-[-.06em] md:text-7xl lg:text-8xl">Sudhanshu <span className="text-primary">Singh</span></h1>
+          <p className="mt-8 max-w-2xl text-xl leading-8 text-muted-foreground md:text-2xl">{about.headline}</p>
+          <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">{about.summary}</p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a className="button-primary" href="#projects">View Projects <ArrowDownRight data-icon="inline-end" /></a>
+            <a className="button-secondary" href="#contact">Contact Me</a>
+          </div>
+          <div className="mt-10 flex items-center gap-3" aria-label="Social links">
+            <a className="icon-button" href={`https://${contact.github}`} target="_blank" rel="noreferrer" aria-label="GitHub"><Github /></a>
+            <a className="icon-button" href={`https://${contact.linkedin}`} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin /></a>
+            <a className="icon-button" href={`mailto:${contact.email}`} aria-label="Email"><Mail /></a>
+          </div>
+        </motion.div>
+        <motion.div className="hero-terminal" initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .7, delay: .15 }} aria-label="Data and software focus visual">
+          <div className="flex items-center justify-between border-b border-border px-5 py-4 text-xs text-muted-foreground"><span className="flex gap-1.5"><i /><i /><i /></span><span className="font-mono">profile.signal</span></div>
+          <div className="p-6 font-mono text-sm leading-7"><p className="text-muted-foreground">01 <span className="text-primary">const</span> focus = [</p><p className="pl-8 text-foreground">&quot;data analysis&quot;,</p><p className="pl-8 text-foreground">&quot;machine learning&quot;,</p><p className="pl-8 text-foreground">&quot;full-stack development&quot;,</p><p className="pl-8 text-foreground">&quot;software development&quot;</p><p className="text-muted-foreground">06 ]</p><div className="mt-8 grid grid-cols-8 gap-2 opacity-80">{Array.from({ length: 32 }, (_, i) => <span key={i} className="data-cell" style={{ opacity: .25 + ((i * 17) % 70) / 100 }} />)}</div><p className="mt-8 text-primary">// building with purpose</p></div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,120 +1,126 @@
 export const about = {
   name: "Sudhanshu Singh",
-  headline: "I am a student of MCA in Artificial Intelligence and Machine Learning at Lovely Professional University.",
-  bsc: "Completed B.Sc. in Information Technology from Mumbai University with a CGPA of 8.52.",
-  goal: "I want to use Artificial Intelligence and Web Development to create technology that helps people in daily life.",
+  headline: "MCA (AI & ML) Student | Data Analyst | Software Developer",
+  summary: "MCA (Artificial Intelligence and Machine Learning) student with experience in data analysis, machine learning, full-stack development, and database-driven applications.",
   photo: "/profile-photo.png",
-  fullText:
-    "I am a student of MCA in Artificial Intelligence and Machine Learning at Lovely Professional University. I have completed my B.Sc. in Information Technology from Mumbai University with a CGPA of 8.52. I am passionate about building technology that makes life easier. I enjoy working with Artificial Intelligence, Machine Learning, and Web Development. My goal is to grow as a developer and create useful projects that can help people in real life.",
 }
 
+export const contact = {
+  name: "Sudhanshu Singh",
+  email: "ss7900585@gmail.com",
+  phone: "+91 7562081734",
+  location: "Mumbai, Maharashtra",
+  linkedin: "linkedin.com/in/sudhanshu-singh",
+  github: "github.com/iamsinghsudhanshu",
+}
+
+export const experience = [
+  {
+    title: "Data Analyst Intern",
+    company: "Bold Analytics",
+    period: "Feb 2026 – Apr 2026",
+    responsibilities: [
+      "Analyzed real-world business datasets to identify trends and generate actionable insights, contributing to an estimated 30% improvement in reporting efficiency.",
+      "Performed end-to-end data cleaning, transformation, and preprocessing on large-scale datasets using Python and Excel to ensure data quality for analysis.",
+      "Optimized SQL queries to extract, filter, and aggregate data from relational databases, reducing manual reporting effort and improving reporting efficiency.",
+    ],
+  },
+]
+
 export const skills = {
-  languages: ["C", "C++", "Java", "Python"],
-  pythonLibraries: ["NumPy", "Pandas", "Matplotlib", "Seaborn"],
-  web: ["HTML", "CSS", "JavaScript", "ReactJS", "NodeJS"],
-  mobile: ["Flutter (currently learning)"],
+  languages: ["C++", "Java", "Python"],
+  frontend: ["HTML5", "CSS3", "Tailwind CSS", "React.js"],
+  backend: ["Spring Boot", "Firebase"],
   databases: ["MySQL", "MongoDB"],
-  tools: ["VS Code", "Jupyter Notebook", "GitHub"],
-  soft: ["Problem-solving", "Analytical Thinking", "Team Collaboration"],
+  dataScienceML: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "IBM Cognos Analytics"],
+  tools: ["Git", "GitHub", "Jupyter Notebook"],
+  coreSkills: ["Data Structures & Algorithms", "OOPs"],
 }
 
 export const certifications = [
   {
     title: "Data Analysis with Python",
     org: "Cognitive Class (IBM Developer Skills Network)",
-    year: "2025",
+    year: "September 2025",
     certificateUrl: "https://courses.cognitiveclass.ai/certificates/9ee59d73c15f4eefb71e5e78b0be6dce",
-  },
-  {
-    title: "Data Analytics Job Simulation",
-    org: "Deloitte Australia · Forage",
-    year: "2025",
-    issuedOn: "October 11, 2025",
-    details: `Sudhanshu Singh
-Data Analytics Job Simulation
-Certificate of Completion
-October 11th, 2025
-
-Over the period of October 2025, Sudhanshu Singh has completed practical tasks in:
-- Data analysis
-- Forensic technology
-
-Tina McCreery
-Chief Human Resources Officer, Deloitte
-
-Enrolment Verification Code D3hDCDBvjkMSKSEH4 | User Verification Code XkKWqPCaxx8RtoQP7 | Issued by Forage`,
-    certificateImage:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-29%20215819-ExcdDZiOzQd0mxoS58c8OIH7QkOhhu.png",
-  },
-  {
-    title: "HackManthan 2025 - Hackathon Participation",
-    org: "Lovely Professional University · EventEye",
-    year: "2025",
-    issuedOn: "2025",
-    details: `Certificate of Participation
-
-This Certificate Is Given To
-Sudhanshu Singh
-
-has successfully participated in HackManthan 2025, a 24-hour hackathon organized by EventEye, held at Lovely Professional University.
-
-We appreciate their enthusiasm, creativity, and contribution towards building innovative solutions during the event.
-
-Nilesh Kumar Gupta
-Founder & CEO, EventEye`,
-    certificateImage:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-29%20215750-kIb0SGLrtbUV0oZ3Op3uk85jFKvzGa.png",
-  },
-  {
-    title: "College level certificates can be added in the future.",
-    org: "",
-    year: "",
   },
 ]
 
 export const projects = [
   {
-    title: "Service-Based Website",
-    description:
-      "This is a website I created to showcase and promote local services like electricians, plumbers, and barbers. It helps service providers connect with customers directly. The website includes service details, client reviews, and a contact form for easy communication. The design is clean and user-friendly so anyone can use it without difficulty. This project improved my skills in web development and also taught me how to build something that solves real problems.",
-    features: ["Service list", "Client reviews", "Contact form"],
-    tech: ["HTML", "CSS", "JavaScript", "ReactJS", "NodeJS", "MongoDB"],
-    outcome: "Helped service providers get more visibility online.",
-    liveLink: "https://hamara-service-apke-ghar-tak.netlify.app",
+    title: "Disaster Response System",
+    date: "Jan 2026 – Jun 2026",
+    description: "A comprehensive role-based platform for emergency training and response management.",
+    tech: ["Java", "Spring Boot", "React.js", "MySQL", "JWT"],
+    highlights: [
+      "Configured role-based Admin and Student portals with JWT authentication and session management using Java/Spring Boot.",
+      "Designed a responsive React.js frontend with reusable components and dynamic routing for emergency guides, quizzes, and dashboards.",
+      "Modeled a MySQL database schema for user profiles, training records, emergency contacts, and alert logs with optimized queries.",
+    ],
+    githubLink: "https://github.com/iamsinghsudhanshu/disaster-response-system.git",
+  },
+  {
+    title: "AI Loan Default Prediction System",
+    date: "Oct 2025 – May 2026",
+    description: "Full-stack machine learning platform for predicting loan default risk with analytics dashboard.",
+    tech: ["React.js", "Spring Boot", "Python (ML)", "MySQL", "JWT"],
+    highlights: [
+      "Engineered a full-stack loan risk prediction platform using React.js and Spring Boot.",
+      "Integrated a Python-based Random Forest Classifier achieving approximately 85% accuracy and 0.89 ROC-AUC for loan default risk prediction.",
+      "Architected secure REST APIs with JWT authentication and role-based access control (Admin/User) using layered Spring Boot architecture: Controller-Service-Repository.",
+      "Implemented an admin analytics dashboard with Chart.js visualizations.",
+      "Implemented a user dashboard supporting loan applications, prediction history, and PDF report generation/export.",
+    ],
+    githubLink: "https://github.com/iamsinghsudhanshu/ai-loan-prediction.git",
+  },
+  {
+    title: "IPL Data Analysis (2008–2024)",
+    date: "Sep 2025 – Oct 2025",
+    description: "Comprehensive exploratory data analysis of Indian Premier League cricket data across 16 seasons.",
+    tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    highlights: [
+      "Conducted exploratory data analysis across 16 IPL seasons and 900+ matches.",
+      "Analyzed trends in team performance, toss impact, and player statistics.",
+      "Visualized cricket performance data using multiple charts.",
+      "Highlighted match outcomes, leading performers, and venue-wise statistics.",
+      "Cleaned and standardized inconsistent raw datasets using missing-value imputation and format normalization.",
+    ],
+    githubLink: "https://github.com/iamsinghsudhanshu/IPL-Data-Analysis-2008-2024.git",
   },
 ]
 
 export const education = [
   {
-    title: "MCA (AI & ML)",
+    title: "MCA — Artificial Intelligence and Machine Learning",
     school: "Lovely Professional University",
     period: "2025 – 2027",
-    note: "Pursuing",
+    location: "Phagwara, Punjab",
+    note: "CGPA: 7.56",
   },
   {
-    title: "B.Sc. IT",
-    school: "Mumbai University",
+    title: "BCA — Bachelor of Computer Applications",
+    school: "Tilak College of Science and Commerce",
     period: "2022 – 2025",
-    note: "CGPA 8.52",
+    location: "Mumbai, Maharashtra",
+    note: "CGPA: 8.52",
   },
   {
-    title: "Senior Secondary (XII)",
-    school: "Central Public School, CBSE",
-    period: "2022",
-    note: "74.2%",
+    title: "Intermediate",
+    school: "Central Public School",
+    period: "2020 – 2022",
+    location: "Mumbai, Maharashtra",
+    note: "Percentage: 73.01%",
   },
   {
-    title: "Secondary (X)",
-    school: "RNP Public School, CBSE",
-    period: "2020",
-    note: "75%",
+    title: "Matriculation",
+    school: "Rnp Public School",
+    period: "2019 – 2020",
+    location: "Chhapra, Bihar",
+    note: "Percentage: 74.02%",
   },
 ]
 
 export const resume = {
   fileName: "sudhanshu_resume(2025).pdf",
   downloadUrl: "/sudhanshu_resume(2025).pdf",
-  summary:
-    "Full-stack developer with expertise in MERN stack, AI/ML, and data analysis. Passionate about building scalable solutions.",
-  email: "sudhanshusingh00003@gmail.com",
 }

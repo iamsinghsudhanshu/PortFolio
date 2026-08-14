@@ -1,96 +1,14 @@
 "use client"
 
+import { useMemo, useState } from "react"
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { ChevronDown, Github } from "lucide-react"
 import { projects } from "@/lib/site-data"
-import { ExternalLink, Github } from "lucide-react"
 
 export function ProjectsSection() {
-  return (
-    <section id="projects" className="scroll-mt-24 py-8 md:py-12">
-      <motion.h2
-        className="mb-8 text-balance text-3xl md:text-4xl font-bold text-slate-900"
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.4 }}
-      >
-        Projects
-      </motion.h2>
-
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {projects.map((project, idx) => (
-          <motion.div
-            key={`${project.title}-${idx}`}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.4, delay: idx * 0.1 }}
-          >
-            <Card className="transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105 h-full flex flex-col border-2 hover:border-emerald-400">
-              <CardHeader>
-                <CardTitle className="text-xl md:text-2xl text-slate-900">{project.title}</CardTitle>
-                <CardDescription className="text-base text-slate-600">{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4 flex-1 flex flex-col">
-                <div>
-                  <p className="font-bold text-slate-900 mb-3 text-lg">Features:</p>
-                  <ul className="list-disc pl-6 text-base text-slate-600 space-y-2">
-                    {project.features.map((f) => (
-                      <li key={f}>{f}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <p className="font-medium text-slate-900 mb-2">Tech Stack:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="inline-flex items-center rounded-md bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700 border border-emerald-200"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex-1" />
-
-                <div className="space-y-3">
-                  <div>
-                    <p className="font-medium text-slate-900 mb-1">Outcome:</p>
-                    <p className="text-sm text-slate-600">{project.outcome}</p>
-                  </div>
-                  <div className="flex gap-3">
-                    {project.liveLink && (
-                      <a href={project.liveLink} target="_blank" rel="noreferrer" className="flex-1">
-                        <Button className="w-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white text-base font-semibold hover:from-emerald-700 hover:to-teal-600 transform hover:scale-110 transition-all duration-300 hover:shadow-lg active:scale-95 flex items-center justify-center gap-2">
-                          <ExternalLink className="h-5 w-5" />
-                          Live Demo
-                        </Button>
-                      </a>
-                    )}
-                    {project.githubLink && (
-                      <a href={project.githubLink} target="_blank" rel="noreferrer" className="flex-1">
-                        <Button
-                          variant="outline"
-                          className="w-full border-2 border-emerald-300 text-emerald-700 font-semibold text-base hover:bg-emerald-50 hover:scale-110 transition-all duration-300 flex items-center justify-center gap-2 bg-transparent hover:shadow-lg active:scale-95"
-                        >
-                          <Github className="h-5 w-5" />
-                          GitHub
-                        </Button>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  )
+  const [filter, setFilter] = useState("All")
+  const [expanded, setExpanded] = useState<string | null>(null)
+  const filters = ["All", "Full-stack", "Data analysis"]
+  const visible = useMemo(() => projects.filter((project) => filter === "All" || (filter === "Data analysis" ? project.title.startsWith("IPL") : !project.title.startsWith("IPL"))), [filter])
+  return <section id="projects" className="section-shell"><div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"><div className="section-heading"><p className="eyebrow">Selected work</p><h2>Projects with a practical point of view.</h2></div><div className="flex flex-wrap gap-2" aria-label="Filter projects">{filters.map((item) => <button key={item} onClick={() => setFilter(item)} className={filter === item ? "filter-button active" : "filter-button"}>{item}</button>)}</div></div><div className="mt-10 grid gap-5 lg:grid-cols-3">{visible.map((project, index) => { const isOpen = expanded === project.title; return <motion.article key={project.title} className="surface-card flex flex-col p-6" initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: index * .07 }} whileHover={{ y: -5 }}><div className="flex items-start justify-between gap-4"><p className="eyebrow">{project.date}</p><span className="project-index">0{index + 1}</span></div><h3 className="mt-5 text-2xl font-semibold tracking-tight">{project.title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{project.description}</p><div className="mt-5 flex flex-wrap gap-2">{project.tech.map((item) => <span className="tech-badge" key={item}>{item}</span>)}</div><div className="mt-6 flex items-center gap-3 border-t border-border pt-5"><a className="button-primary flex-1 justify-center" href={project.githubLink} target="_blank" rel="noreferrer"><Github data-icon="inline-start" /> View on GitHub</a><button className="icon-button" onClick={() => setExpanded(isOpen ? null : project.title)} aria-expanded={isOpen} aria-label={`${isOpen ? "Collapse" : "Expand"} ${project.title} details`}><ChevronDown className={isOpen ? "rotate-180 transition-transform" : "transition-transform"} /></button></div>{isOpen && <div className="mt-5 border-t border-border pt-5"><p className="eyebrow mb-3">Key highlights</p><ul className="grid gap-3 text-sm leading-6 text-muted-foreground">{project.highlights.map((highlight) => <li key={highlight} className="flex gap-3"><span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />{highlight}</li>)}</ul></div>}</motion.article> })}</div></section>
 }

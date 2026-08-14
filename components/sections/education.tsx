@@ -1,47 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { education } from "@/lib/site-data"
 import { GraduationCap } from "lucide-react"
+import { education } from "@/lib/site-data"
 
-export function EducationSection() {
-  return (
-    <section id="education" className="scroll-mt-24 py-8 md:py-12">
-      <motion.h2
-        className="mb-6 text-balance text-2xl font-semibold text-slate-900"
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.4 }}
-      >
-        Education
-      </motion.h2>
-
-      <ol className="relative border-l border-slate-200">
-        {education.map((edu, idx) => (
-          <motion.li
-            key={`${edu.title}-${idx}`}
-            className="ml-6 mb-8"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.4 }}
-          >
-            <span className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-blue-600" aria-hidden />
-            <div className="flex items-start gap-2">
-              <GraduationCap className="mt-0.5 h-5 w-5 text-blue-600" aria-hidden />
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-slate-900">{edu.title}</h3>
-                <p className="text-sm text-slate-600">{edu.school}</p>
-                <p className="text-sm text-slate-600">
-                  {edu.period}
-                  {edu.note ? `, ${edu.note}` : ""}
-                </p>
-              </div>
-            </div>
-          </motion.li>
-        ))}
-      </ol>
-    </section>
-  )
-}
+export function EducationSection() { return <section id="education" className="section-shell"><div className="section-heading"><p className="eyebrow">Education</p><h2>A focused academic path in AI and ML.</h2></div><div className="timeline mt-10">{education.map((item, index) => <motion.article key={item.title} className="timeline-item" initial={{ opacity: 0, x: -12 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: index * .08 }}><span className="timeline-dot" aria-hidden="true"><GraduationCap /></span><div className="surface-card p-5 md:p-6"><div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between"><div><h3 className="text-xl font-semibold">{item.title}</h3><p className="mt-1 text-muted-foreground">{item.school}</p></div><p className="eyebrow">{item.period}</p></div><div className="mt-5 flex flex-wrap gap-3 text-sm text-muted-foreground"><span>{item.note}</span><span className="text-border">/</span><span>{item.location}</span></div></div></motion.article>)}</div></section> }

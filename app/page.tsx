@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/nav/site-header"
 import { AboutMeSection } from "@/components/sections/about-me"
+import { ExperienceSection } from "@/components/sections/experience"
 import { SkillsSection } from "@/components/sections/skills"
 import { CertificationsSection } from "@/components/sections/certifications"
 import { ProjectsSection } from "@/components/sections/projects"
@@ -12,27 +13,15 @@ import { BackToTop } from "@/components/back-to-top"
 export default function HomePage() {
   return (
     <>
-      <div className="animated-gradient" aria-hidden />
-      <ul className="particles" aria-hidden>
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-        <li />
-      </ul>
-
+      <div className="data-grid" aria-hidden="true" />
       <SiteHeader />
       <HeroSection />
-      <main className="relative z-10 mx-auto max-w-5xl px-4 py-10 md:py-12">
+      <main className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-16">
         <AboutMeSection />
+        <ExperienceSection />
         <SkillsSection />
-        <CertificationsSection />
         <ProjectsSection />
+        <CertificationsSection />
         <EducationSection />
         <ContactSection />
       </main>
